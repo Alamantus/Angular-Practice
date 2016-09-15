@@ -1,3 +1,6 @@
+require("bootstrap-sass");
+require("../sass/main.scss");
+
 var app = angular.module("Portfolio", ["ngSanitize"]);
 
 app.filter('startFrom', function() {
