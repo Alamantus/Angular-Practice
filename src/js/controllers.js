@@ -1,4 +1,21 @@
+require("../sass/main.scss");
+const angular = require('angular');
+const shuffle = require('knuth-shuffle');
+
 var currentDate = new Date();
+
+var app = angular.module("Portfolio", [require('angular-sanitize')]);
+
+app.filter('startFrom', function() {
+// Fetched from http://stackoverflow.com/a/28411525
+  return function(input, start) {
+    if(input) {
+      start = +start; //parse to int
+      return input.slice(start);
+    }
+    return [];
+  }
+});
 
 app.controller("Content", function($scope) {
 	$scope.currentYear = currentDate.getFullYear();
@@ -22,7 +39,7 @@ app.controller("Content", function($scope) {
 			"details"	: "Finds the most cost-effective solutions to problems"
 		}
 	];
-	knuthShuffle($scope.traits);
+	shuffle($scope.traits);
 
 	$scope.skillsTitle = "Skills";
 	$scope.skills = [
@@ -143,7 +160,7 @@ app.controller("Content", function($scope) {
 										]
 		}
 	];
-	knuthShuffle($scope.skills);
+	shuffle($scope.skills);
 
 	$scope.projectsTitle = "Portfolio";
 	$scope.projectsMoreInfo = "More about this...";

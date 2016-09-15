@@ -5,7 +5,7 @@ var app = express();
 //   res.send('Hello World!');
 // });
 
-app.use(express.static('./'));
+app.use(express.static('./public/'));
 
 app.listen(3013, function () {
   console.log('Example app listening on port 3013!');

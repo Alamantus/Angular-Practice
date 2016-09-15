@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 
  module.exports = {
-    entry: './src/js/app.js',
+    entry: './src/js/controllers.js',
     output: {
       path: './public',
       filename: 'portfolio.js'
@@ -13,10 +13,10 @@ const webpack = require('webpack');
           exclude: /node_modules/,
           loader: 'babel-loader'
         },
-        // {
-        //   test: /\.scss$/,
-        //   loaders: ["css", "sass"]
-        // }
+        {
+          test: /\.scss$/,
+          loaders: ["style", "css", "sass"]
+        }
       ]
     },
     plugins: [
@@ -29,10 +29,10 @@ const webpack = require('webpack');
         }
       })
     ],
-    // sassLoader: {
-    //   file: './src/sass/main.scss',
-    //   includePaths: ['./node_modules/bootstrap-sass/assets/'],
-    //   outFile: './public/styles.css',
-    //   outputStyle: 'compressed'
-    // }
+    sassLoader: {
+      file: './src/sass/main.scss',
+      includePaths: ['./node_modules/bootstrap-sass/assets/'],
+      outFile: './public/styles.css',
+      outputStyle: 'compressed'
+    }
  };

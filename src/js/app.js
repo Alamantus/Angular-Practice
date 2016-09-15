@@ -1,7 +1,4 @@
-require("bootstrap-sass");
-require("../sass/main.scss");
-
-var app = angular.module("Portfolio", ["ngSanitize"]);
+var app = angular.module("Portfolio", [require('angular-sanitize')]);
 
 app.filter('startFrom', function() {
 // Fetched from http://stackoverflow.com/a/28411525
@@ -13,3 +10,5 @@ app.filter('startFrom', function() {
     return [];
   }
 });
+
+module.exports = app;
