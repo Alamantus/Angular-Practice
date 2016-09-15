@@ -1,21 +1,15 @@
 require("../sass/main.scss");
-const angular = require('angular');
+const jQuery = require('jquery');
+window.jQuery = jQuery;
+const $ = jQuery;
+window.$ = $;
+require('bootstrap-sass');
+
 const shuffle = require('knuth-shuffle');
 
 var currentDate = new Date();
 
-var app = angular.module("Portfolio", [require('angular-sanitize')]);
-
-app.filter('startFrom', function() {
-// Fetched from http://stackoverflow.com/a/28411525
-  return function(input, start) {
-    if(input) {
-      start = +start; //parse to int
-      return input.slice(start);
-    }
-    return [];
-  }
-});
+var app = require('./app');
 
 app.controller("Content", function($scope) {
 	$scope.currentYear = currentDate.getFullYear();

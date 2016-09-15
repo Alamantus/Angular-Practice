@@ -1,3 +1,5 @@
+const angular = require('angular');
+
 var app = angular.module("Portfolio", [require('angular-sanitize')]);
 
 app.filter('startFrom', function() {
