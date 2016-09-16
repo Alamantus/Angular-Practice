@@ -1,8 +1,8 @@
+require('../index.html');
 require("../sass/main.scss");
-const jQuery = require('jquery');
-window.jQuery = jQuery;
-const $ = jQuery;
-window.$ = $;
+
+const jQuery = $ = require('jquery');
+window.jQuery = window.$ = jQuery;
 require('bootstrap-sass');
 
 const shuffle = require('knuth-shuffle');
@@ -29,7 +29,7 @@ class App extends React.Component {
   showSkills(skills) {
     var result = [];
     for (var i = 0; i < skills.length; i++) {
-      result.push(<Skill key={'skill_' + i.toString()} name={skills[i].name} icon={skills[i].icon} specifics={skills[i].specifics}
+      result.push(<Skill key={'skill_' + i.toString()} name={skills[i].name} icon={'images/' + skills[i].icon} specifics={skills[i].specifics}
         yearBegan={skills[i].yearBegan} links={skills[i].links} z={1000 + skills.length - i} />);
     }
     return <div>{result}</div>;
@@ -48,7 +48,7 @@ class App extends React.Component {
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
               </button>
-              <a className="brand" href="/">{headings.siteTitle}</a>
+              <a className="brand" href="/">{headings.siteTitle}</a><span>{headings.siteSubtitle}</span>
 
               <links className="collapse" id="navbar-collapse">
                 <ul>
@@ -74,6 +74,22 @@ class App extends React.Component {
             <h3>{headings.skillsTitle}</h3>
             {this.showSkills(skillsArray)}
           </section>
+
+          <section id="projects-container">
+            <a name="projects" class="anchor"></a>
+            <h2>{headings.projectsTitle}</h2>
+
+            <article class="project" ng-repeat="project in projects | limitTo: numProjectsBeforeHide" ng-include="'projectTemplate'" ng-init="templatePrefix = ''"></article>
+
+            <div id="hidden-projects" class="project-hider">
+                <div class="panel-heading" data-toggle="collapse" data-target="#projects-collapse">
+                    <h3>{headings.moreProjectsTitle}</h3>
+                </div>
+                <div id="projects-collapse" class="panel-body collapse">
+                    <article class="project" ng-repeat="project in projects | startFrom: numProjectsBeforeHide" ng-include="'projectTemplate'" ng-init="templatePrefix = 'hidden-'"></article>
+                </div>
+            </div>
+        </section>
 
         </container>
 

@@ -5,6 +5,8 @@ const BUILD_DIR = path.resolve(__dirname, 'public');
 const APP_DIR = path.resolve(__dirname, 'src/js');
 const SASS_DIR = path.resolve(__dirname, 'src/sass');
 const DATA_DIR = path.resolve(__dirname, 'src/data');
+const IMG_DIR = path.resolve(__dirname, 'src/images');
+const HTML_DIR = path.resolve(__dirname, 'src');
 
  module.exports = {
     entry: APP_DIR + '/index.jsx',
@@ -15,20 +17,31 @@ const DATA_DIR = path.resolve(__dirname, 'src/data');
     module: {
       loaders: [
         {
-          test: /\.jsx?$/,
-          include: APP_DIR,
+          test: /\.html?$/,
+          include: HTML_DIR,
           exclude: /node_modules/,
-          loader: 'babel'
+          loaders: [
+                    'file?name=[name].html',
+                    'html-minify'
+                  ]
         },
         {
           test: /\.scss$/,
           include: SASS_DIR,
+          exclude: /node_modules/,
           loaders: ['style', 'css', 'sass']
         },
         {
           test: /\.json$/,
           include: DATA_DIR,
+          exclude: /node_modules/,
           loader: 'json'
+        },
+        {
+          test: /\.jsx?$/,
+          include: APP_DIR,
+          exclude: /node_modules/,
+          loader: 'babel'
         }
       ]
     },

@@ -1,7 +1,7 @@
 [
   {
     "name"      : "AngularJS",
-    "icon"      : "images/icons/angular.png",
+    "icon"      : "angular.png",
     "specifics" : "Website templating and auto-populating",
     "yearBegan" : 2016,
     "links"     : [
@@ -10,7 +10,7 @@
   },
   {
     "name"      : "Bootstrap",
-    "icon"      : "images/icons/bootstrap.png",
+    "icon"      : "bootstrap.png",
     "specifics" : "Clean, consistent website styling",
     "yearBegan" : 2013,
     "links"     : [
@@ -20,7 +20,7 @@
   },
   {
     "name"      : "C# .NET",
-    "icon"      : "images/icons/csharp.png",
+    "icon"      : "csharp.png",
     "specifics" : "Game Development in Unity 3D Game Engine",
     "yearBegan" : 2013,
     "links"     : [
@@ -29,7 +29,7 @@
   },
   {
     "name"      : "CSS3",
-    "icon"      : "images/icons/css.png",
+    "icon"      : "css.png",
     "specifics" : "Extensive web templating and styling experience",
     "yearBegan" : 2010,
     "links"     : [
@@ -39,7 +39,7 @@
   },
   {
     "name"      : "HTML5",
-    "icon"      : "images/icons/html.png",
+    "icon"      : "html.png",
     "specifics" : "Extensive web templating and styling experience",
     "yearBegan" : 2010,
     "links"     : [
@@ -49,7 +49,7 @@
   },
   {
     "name"      : "JavaScript",
-    "icon"      : "images/icons/javascript.png",
+    "icon"      : "javascript.png",
     "specifics" : "Clean, efficient EMCA2015 (ES6) programming for fast, interactive websites",
     "yearBegan" : 2012,
     "links"     : [
@@ -58,7 +58,7 @@
   },
   {
     "name"      : "jQuery",
-    "icon"      : "images/icons/jquery.png",
+    "icon"      : "jquery.png",
     "specifics" : "Easy understanding of APIs to make JavaScript programming easier",
     "yearBegan" : 2013,
     "links"     : [
@@ -67,7 +67,7 @@
   },
   {
     "name"      : "MySQL",
-    "icon"      : "images/icons/mysql.png",
+    "icon"      : "mysql.png",
     "specifics" : "Database design, management, and API calls",
     "yearBegan" : 2010,
     "links"     : [
@@ -78,7 +78,7 @@
   },
   {
     "name"      : "NodeJS",
-    "icon"      : "images/icons/node.png",
+    "icon"      : "node.png",
     "specifics" : "Experience with command line tools and package management with NPM",
     "yearBegan" : 2016,
     "links"     : [
@@ -87,7 +87,7 @@
   },
   {
     "name"      : "PHP",
-    "icon"      : "images/icons/php.png",
+    "icon"      : "php.png",
     "specifics" : "Vanilla PHP and API construction",
     "yearBegan" : 2012,
     "links"     : [
@@ -98,7 +98,7 @@
   },
   {
     "name"      : "Sass",
-    "icon"      : "images/icons/sass.png",
+    "icon"      : "sass.png",
     "specifics" : "Clean, readable stylesheets for improved styling management",
     "yearBegan" : 2016,
     "links"     : [
@@ -108,7 +108,7 @@
   },
   {
     "name"      : "Wordpress",
-    "icon"      : "images/icons/wordpress.png",
+    "icon"      : "wordpress.png",
     "yearBegan" : 2008,
     "specifics" : "Site management and theme customization",
     "links"     : [
