@@ -1,0 +1,17 @@
+[
+  {
+    "name"    : "Fast",
+    "icon"    : "images/icons/fast.png",
+    "details" : "Finishes presentable prototypes in 7–10 days"
+  },
+  {
+    "name"    : "Flexible",
+    "icon"    : "images/icons/flexible.png",
+    "details" : "Learns new APIs and converts code between languages"
+  },
+  {
+    "name"    : "Resourceful",
+    "icon"    : "images/icons/resourceful.png",
+    "details" : "Finds the most cost-effective solutions to problems"
+  }
+]
