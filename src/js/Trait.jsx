@@ -1,22 +1,16 @@
 import React from 'react';
 
 class Trait extends React.Component {
-  constructor(props, {name, details, icon}) {
+  constructor(props) {
     super(props);
-    this.name = name;
-    this.details = details;
-    this.icon = icon;
   }
 
   render() {
     return (
-      <div class="card-flipper">
-        <div class="card-front">
-          <img src="{this.icon}" alt="{this.name}" />
-        </div>
-        <div class="card-back">
-          <h3>{this.name}</h3>
-          <p class="details">{this.details}</p>
+      <div className="trait card-container" style={{zIndex: this.props.z}}>
+        <div className="card">
+          <h3>{this.props.name}</h3>
+          <p className="details">{this.props.details}</p>
         </div>
       </div>
     );
