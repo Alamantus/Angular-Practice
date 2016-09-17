@@ -10,7 +10,7 @@ class Skill extends React.Component {
     for (var i = 0; i < this.props.links.length; i++) {
       var link = this.props.links[i];
       links.push(
-        <button type="button" className="pop">{(i + 1).toString()}<span className="pop-content"><a href={link} target="_blank">{link}</a></span></button>
+        <button key={this.props.name + 'link' + i.toString()} type="button" className="pop">{(i + 1).toString()}<span className="pop-content"><a href={link} target="_blank">{link}</a></span></button>
       );
     }
     return <span className="links">{links}</span>;

@@ -1,7 +1,8 @@
 require('../index.html');
 require("../sass/main.scss");
 
-const jQuery = $ = require('jquery');
+const jQuery = require('jquery');
+const $ = jQuery;
 window.jQuery = window.$ = jQuery;
 require('bootstrap-sass');
 
@@ -12,10 +13,12 @@ import {render} from 'react-dom';
 
 import Trait from './Trait.jsx';
 import Skill from './Skill.jsx';
+import Project from './Project.jsx';
 
 import headings from '../data/headings.json';
 import traitsArray from '../data/traits.json';
 import skillsArray from '../data/skills.json';
+import projectsArray from '../data/projects.json';
 
 class App extends React.Component {
   showTraits(traits) {
@@ -31,6 +34,16 @@ class App extends React.Component {
     for (var i = 0; i < skills.length; i++) {
       result.push(<Skill key={'skill_' + i.toString()} name={skills[i].name} icon={'images/' + skills[i].icon} specifics={skills[i].specifics}
         yearBegan={skills[i].yearBegan} links={skills[i].links} z={1000 + skills.length - i} />);
+    }
+    return <div>{result}</div>;
+  }
+
+  showProjects(projects, prefix = '') {
+    var result = [];
+    for (var i = 0; i < projects.length; i++) {
+      result.push(<Project key={'project_' + i.toString()} name={projects[i].name} thumbnail={'images/' + projects[i].thumbnail} type={projects[i].type}
+        startDate={projects[i].startDate} endDate={projects[i].endDate} link={projects[i].link} snippet={projects[i].snippet} details={projects[i].details}
+        prefix={prefix} index={i} z={1000 + projects.length - i} />);
     }
     return <div>{result}</div>;
   }
@@ -76,17 +89,17 @@ class App extends React.Component {
           </section>
 
           <section id="projects-container">
-            <a name="projects" class="anchor"></a>
+            <a name="projects" className="anchor"></a>
             <h2>{headings.projectsTitle}</h2>
 
-            <article class="project" ng-repeat="project in projects | limitTo: numProjectsBeforeHide" ng-include="'projectTemplate'" ng-init="templatePrefix = ''"></article>
+            {this.showProjects(projectsArray)}
 
-            <div id="hidden-projects" class="project-hider">
-                <div class="panel-heading" data-toggle="collapse" data-target="#projects-collapse">
+            <div id="hidden-projects" className="project-hider">
+                <div className="panel-heading" data-toggle="collapse" data-target="#projects-collapse">
                     <h3>{headings.moreProjectsTitle}</h3>
                 </div>
-                <div id="projects-collapse" class="panel-body collapse">
-                    <article class="project" ng-repeat="project in projects | startFrom: numProjectsBeforeHide" ng-include="'projectTemplate'" ng-init="templatePrefix = 'hidden-'"></article>
+                <div id="projects-collapse" className="panel-body collapse">
+                    {this.showProjects(projectsArray, 'hidden-')}
                 </div>
             </div>
         </section>
